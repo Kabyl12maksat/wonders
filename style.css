@@ -4,6 +4,7 @@
     --background-90A3BF: #90A3BF;
     --background-0578FF: #0578FF;
     --background-20202080: #20202080;
+    --background-f5f5f5: #F5F5F5;
     --background-006AF5: #006AF5;
     --background-90A3BF80: #90A3BF80;
     --linear: linear-gradient(180deg, #F5F5F5 0%, #DDECFF 50.17%, #F5F5F5 100%);
@@ -14,6 +15,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    color: var(--color-202020);
 }
 
 .container {
@@ -27,6 +29,7 @@
 
 header {
     padding: 40px 64px;
+    background: var(--background-f5f5f5);
 }
 
 .nav-bar {
@@ -88,13 +91,225 @@ header {
     font-weight: 600;
 }
 
-.menu {
+.menu,
+.menu-list {
     display: none;
 }
 
 
 /* header - style */
 
+/* main - style */
+
+#travel-registration {
+    display: flex;
+    gap: 32px;
+    padding: 64px 64px 128px 64px;
+    background: var(--linear);
+}
+
+.travel-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.travel-form h1 {
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.travel-img {
+    animation: weightlessness 3s ease-in-out infinite;
+}
+
+
+.choose-trip {
+    display: flex;
+    width: 640px;
+    height: 34px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: var(--background-fff);
+    padding: 0 24px;
+}
+
+.trip-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.trip-form h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+#departure,
+#arrival {
+    width: calc(304px - 16px);
+    padding: 16px 24px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    height: 53px;
+}
+
+.trip-form input[type="text"]::placeholder {
+    color: var(--background-90A3BF);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+#departure:focus,
+#arrival:focus,
+.depart:hover,
+.return:hover {
+    box-shadow: 0 0 0 3px var(--background-006AF5);
+    transition: all 0.3s ease;
+}
+
+input[type="radio"] {
+    margin-right: 6px;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background-color: var(--background-90A3BF);
+    opacity: 0.5;
+    border-radius: 50%;
+    position: relative;
+    top: 3px;
+    cursor: pointer;
+}
+
+
+input[type="radio"]:checked {
+    background-color: var(--background-006AF5);
+    opacity: 1;
+}
+
+input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: var(--background-fff);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#count-people {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: var(--color-202020);
+}
+
+#count-people::before {
+    content: url(img/person.png);
+    position: relative;
+    top: 3px;
+    left: 4px;
+}
+
+#counter {
+    font-family: 'Inter', sans-serif;
+}
+
+.btn {
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 2px;
+    background-color: var(--color-202020);
+    opacity: 0.5;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+}
+
+
+.btn-plus::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 12px;
+    background-color: var(--color-202020);
+    opacity: 0.5;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+}
+
+
+.btn-plus::before {
+    background-color: var(--color-202020);
+}
+
+
+.btn:hover::before,
+.btn-plus:hover::after {
+    background-color: var(--background-006AF5);
+    opacity: 1;
+}
+
+.trip-from,
+.dep-ret {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.depart,
+.return {
+    display: flex;
+    align-items: center;
+    width: calc(304px - 16px);
+    border-radius: 16px;
+    padding: 16px 24px;
+    height: 53px;
+    gap: 12px;
+    background-color: var(--background-fff);
+    cursor: pointer;
+}
+
+#depart,
+#return {
+    width: 100%;
+    border: none;
+    height: 100%;
+    outline: none;
+    border-radius: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+/* main - style */
 
 @media (max-width: 768px) {
     header {
@@ -142,11 +357,9 @@ header {
         transition: all 0.4s ease;
     }
 
-    .hide-menu {
-        display: none;
-    }
-    .show-menu {
+    .open {
         display: block;
+        animation: fadeIn 1s ease forwards;
     }
 
     #menu-list {
@@ -212,5 +425,34 @@ header {
 
     #menu-list a {
         font-size: 32px;
+    }
+}
+
+/* Animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes weightlessness {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }

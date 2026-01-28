@@ -10,6 +10,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <title>Wonders</title>
 </head>
 
@@ -36,7 +39,7 @@
                         <div class="line rotation2"></div>
                     </div>
                 </div>
-                <ul id="menu-list">
+                <ul id="menu-list" class="menu-list">
                     <li><a href="#">Mobile App</a></li>
                     <li><a href="#">FAQs</a></li>
                     <li><a href="#">Contact</a></li>
@@ -44,7 +47,59 @@
                 </ul>
             </div>
         </header>
-        <main></main>
+        <main>
+            <section id="travel-registration">
+                <div class="travel-form">
+                    <h1>Skip the Climbing, Catch the Bus</h1>
+                    <p>We sell tickets to the best seats in the house – houses on wheels, that is! <br> Get ready for
+                        jaw-dropping views without breaking a sweat.</p>
+                    <form method="GET" class="trip-form">
+                        <div class="choose-trip">
+                            <label for="round-trip">
+                                <input type="radio" id="round-trip" name="trip">Round trip
+                            </label>
+                            <label for="one-way">
+                                <input type="radio" id="one-way" name="trip">One Way
+                            </label>
+                            <div id="count-people">
+                                <button id="minus" class="btn btn-minus" type="button"></button>
+                                <span id="counter" class="counter">1</span>
+                                <button id="plus" class="btn btn-plus" type="button"></button>
+                            </div>
+                        </div>
+                        <div class="trip-info">
+                            <div class="trip-from">
+                                <div class="departure">
+                                    <h2>Departure</h2>
+                                    <input type="text" id="departure" placeholder="Your City/Station">
+                                </div>
+                                <div class="arrival">
+                                    <h2>Arrival</h2>
+                                    <input type="text" id="arrival" placeholder="Where to?">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trip-days">
+                            <h2>Pick your lucky day</h2>
+                            <div class="dep-ret">
+                                <div class="depart">
+                                    <img src="img/calendar.png" alt="calendar icon">
+                                    <input type="text" id="depart" placeholder="Depart">
+                                </div>
+                                <div class="return">
+                                    <img src="img/calendar.png" alt="calendar icon">
+                                    <input type="text" id="return" placeholder="Return">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit">Find My Alpine Ride</button>
+                    </form>
+                </div>
+                <div class="travel-img">
+                    <img src="img/Hero.png" alt="hero">
+                </div>
+            </section>
+        </main>
         <footer></footer>
     </div>
     <script src="script.js"></script>

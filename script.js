@@ -3,15 +3,33 @@ const menuList = document.getElementById('menu-list');
 
 console.log(menuList)
 
-burger.addEventListener('click', function () {
+burgerOpen.addEventListener('click', function () {
     if (this.classList.contains('close')) {
         this.classList.remove('close');
-        menuList.className = "hide-menu";
+        menuList.classList.remove('open');
     } else {
         this.classList.add('close');
-        menuList.className = "show-menu";
+        menuList.classList.add('open');
     }
 })
+
+
+let counter = 1;
+const minusBtn = document.getElementById('minus');
+const plusBtn = document.getElementById('plus');
+const counterDisplay = document.getElementById('counter');
+
+minusBtn.addEventListener('click', function () {
+    if (counter > 1) {
+        counter--;
+        counterDisplay.textContent = counter;
+    }
+});
+
+plusBtn.addEventListener('click', function () {
+    counter++;
+    counterDisplay.textContent = counter;
+});
 
 
 
