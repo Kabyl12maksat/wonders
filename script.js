@@ -31,5 +31,18 @@ plusBtn.addEventListener('click', function () {
     counterDisplay.textContent = counter;
 });
 
+const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
+
+
+
+
+
+
+
+
 
 

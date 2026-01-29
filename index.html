@@ -26,9 +26,9 @@
                 </div>
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="#">Mobile App</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#mobileApp">Mobile App</a></li>
+                        <li><a href="#FAQ">FAQs</a></li>
+                        <li><a href="#Contact">Contact</a></li>
                         <li><a href="#" id="registration">Sign Up</a></li>
                     </ul>
                 </nav>
@@ -40,9 +40,9 @@
                     </div>
                 </div>
                 <ul id="menu-list" class="menu-list">
-                    <li><a href="#">Mobile App</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#mobileApp">Mobile App</a></li>
+                    <li><a href="#FAQ">FAQs</a></li>
+                    <li><a href="#Contact">Contact</a></li>
                     <li><a href="#" id="registration-mobile">Sign Up</a></li>
                 </ul>
             </div>
@@ -50,10 +50,14 @@
         <main>
             <section id="travel-registration">
                 <div class="travel-form">
-                    <h1>Skip the Climbing, Catch the Bus</h1>
-                    <p>We sell tickets to the best seats in the house – houses on wheels, that is! <br> Get ready for
-                        jaw-dropping views without breaking a sweat.</p>
                     <form method="GET" class="trip-form">
+                        <div class="trip-title">
+                            <h1>Skip the Climbing, Catch the Bus</h1>
+                            <p>We sell tickets to the best seats in the house – houses on wheels, that is! <br> Get
+                                ready
+                                for
+                                jaw-dropping views without breaking a sweat.</p>
+                        </div>
                         <div class="choose-trip">
                             <label for="round-trip">
                                 <input type="radio" id="round-trip" name="trip">Round trip
@@ -91,6 +95,54 @@
                                     <input type="text" id="return" placeholder="Return">
                                 </div>
                             </div>
+                            <div class="calendar">
+                                <div class="calendar__parts">
+                                    <div class="calendar_depart">
+                                        <div class="calendar__header">
+                                            <div class="left">
+                                                <img src="img/left.png" alt="left">
+                                            </div>
+                                            <span id="choose-date__d">December 2025</span>
+                                        </div>
+                                        <div class="calendar__grid">
+                                            <div class="calendar__day-names">
+                                                <div class="days">M</div>
+                                                <div class="days">T</div>
+                                                <div class="days">W</div>
+                                                <div class="days">T</div>
+                                                <div class="days">F</div>
+                                                <div class="days">S</div>
+                                                <div class="days">S</div>
+                                            </div>
+                                            <div class="calendar__day-numbersD"></div>
+                                        </div>
+                                    </div>
+                                    <div class="calendar_return">
+                                        <div class="calendar__header">
+                                            <span id="choose-date__r">January 2025</span>
+                                            <div class="right">
+                                                <img src="img/right.png" alt="right">
+                                            </div>
+                                        </div>
+                                        <div class="calendar__grid">
+                                            <div class="calendar__day-names">
+                                                <div class="days">M</div>
+                                                <div class="days">T</div>
+                                                <div class="days">W</div>
+                                                <div class="days">T</div>
+                                                <div class="days">F</div>
+                                                <div class="days">S</div>
+                                                <div class="days">S</div>
+                                            </div>
+                                            <div class="calendar__day-numbersR"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="calendar__buttons">
+                                    <button id="reset">Reset</button>
+                                    <button id="apply">Apply</button>
+                                </div>
+                            </div>
                         </div>
                         <button type="submit">Find My Alpine Ride</button>
                     </form>
@@ -98,6 +150,70 @@
                 <div class="travel-img">
                     <img src="img/Hero.png" alt="hero">
                 </div>
+            </section>
+            <section id="results">
+                <div class="results-numbers">
+                    <span>68k+</span>
+                    <p>Track kilometers</p>
+                </div>
+                <div class="results-numbers">
+                    <span>1.4M+</span>
+                    <p>Photos Taken</p>
+                </div>
+                <div class="results-numbers">
+                    <span>23M+</span>
+                    <p>Altitude Gained</p>
+                </div>
+                <div class="results-numbers">
+                    <span>165+</span>
+                    <p>Years of history</p>
+                </div>
+            </section>
+            <section id="images">
+                <h2>Glimpses of Glory</h2>
+                <div class="grid-img">
+                    <div class="flex-img__item">
+                        <img src="img/mountain1.png" class="img1" alt="mountain">
+                        <img src="img/mountain2.png" class="img5" alt="mountain">
+                    </div>
+                    <div class="grid-img__item">
+                        <img src="img/mountain5.png" class="img2" alt="mountain">
+                        <img src="img/mountain3.png" class="img3" alt="mountain">
+                        <img src="img/mountain4.png" class="img4" alt="mountain">
+                    </div>
+                </div>
+            </section>
+            <section id="mobileApp">
+                <h1>Free downloads app now!</h1>
+                <div class="download">
+                    <div class="download-box">
+                        <a href="#" target="_blank">
+                            <img src="img/GP.png" alt="get in on google play">
+                        </a>
+                    </div>
+                    <div class="download-box">
+                        <a href="#" target="_blank">
+                            <img src="img/HW.png" alt="explore it on appgallery">
+                        </a>
+                    </div>
+                    <div class="download-box">
+                        <a href="#" target="_blank">
+                            <img src="img/AS.png" alt="download on the app store">
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section id="FAQ">
+                <h1>FAQs.</h1>
+                <div class="faqs-question">
+                    <span class="question">Alpine Bus Journeys?</span>
+                    <button type="button" class="btn faq-plus"></button>
+                </div>
+                <div class="faqs-question"></div>
+                <div class="faqs-question"></div>
+                <div class="faqs-question"></div>
+                <div class="faqs-question"></div>
+                <div class="faqs-question"></div>
             </section>
         </main>
         <footer></footer>
