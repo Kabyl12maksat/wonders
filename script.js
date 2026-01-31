@@ -25,6 +25,7 @@ menuListElem.forEach(function (e) {
     e.addEventListener('click', function () {
         burgerOpen.classList.remove('close');
         menuList.classList.remove('open')
+        html.style.overflow = 'auto';
     })
 })
 
