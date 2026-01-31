@@ -525,14 +525,15 @@ input[type="radio"]:checked::after {
 .grid-img__item {
     display: flex;
     flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-between;
+    flex: 1;
 }
 
-.grid-img__item img:nth-child(1) {
-    margin-right: 32px;
-}
+
 
 .grid-img__item img {
-    margin-bottom: 32px;
+    border-radius: 10px;
 }
 
 #mobileApp {
@@ -858,6 +859,10 @@ input[type="radio"]:checked::after {
     }
 
     #menu-list a {
+        font-size: 32px;
+    }
+
+    #mobileApp h1 {
         font-size: 32px;
     }
 
