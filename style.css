@@ -19,16 +19,22 @@
     color: var(--color-202020);
 }
 
-html {scroll-behavior: smooth;}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
 
 body {
-    background-color: #DADADA
+    background-color: #DADADA;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 
 .container {
     max-width: 1440px;
     margin: 0 auto;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
 }
 
 /* header - style */
@@ -112,16 +118,18 @@ header {
     gap: 32px;
     padding: 64px 64px 128px 64px;
     background: var(--linear);
+    flex-wrap: wrap;
 }
 
 .travel-form {
-    flex: 0;
+    flex: 1;
+    min-width: 300px;
     display: flex;
     gap: 32px;
 }
 
 .travel-form h1 {
-    font-size: 64px;
+    font-size: clamp(32px, 5vw, 64px);
     font-weight: 700;
 }
 
@@ -129,22 +137,45 @@ header {
     animation: weightlessness 3s ease-in-out infinite;
 }
 
+.travel-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+.trip-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.departure,
+.arrival {
+    flex: 1;
+    min-width: 200px;
+}
+
 .trip-title {
     display: inline-flex;
     flex-direction: column;
     gap: 32px;
+    max-width: 100%;
 }
 
 
 .choose-trip {
     display: flex;
-    width: 640px;
-    height: 34px;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    min-height: 34px;
     align-items: center;
     justify-content: space-between;
     border-radius: 10px;
     background-color: var(--background-fff);
     padding: 0 24px;
+    flex-wrap: wrap;
 }
 
 .trip-form {
@@ -161,7 +192,7 @@ header {
 
 #departure,
 #arrival {
-    width: calc(304px - 16px);
+    width: 100%;
     padding: 16px 24px;
     border-radius: 10px;
     outline: none;
@@ -283,10 +314,10 @@ input[type="radio"]:checked::after {
     opacity: 1;
 }
 
-.trip-from,
 .dep-ret {
     display: flex;
     gap: 32px;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -294,12 +325,14 @@ input[type="radio"]:checked::after {
 .return {
     display: flex;
     align-items: center;
-    width: calc(304px - 16px);
+    width: 100%;
+    min-width: 200px;
     border-radius: 10px;
     padding: 16px 24px;
     height: 53px;
     gap: 12px;
     background-color: var(--background-fff);
+    flex: 1;
 }
 
 #depart,
@@ -334,7 +367,8 @@ input[type="radio"]:checked::after {
     padding: 24px 32px;
     border-radius: 10px;
     background-color: var(--background-fff);
-    width: 640px;
+    width: 100%;
+    max-width: 640px;
 }
 
 .calendar__parts {
@@ -429,12 +463,21 @@ input[type="radio"]:checked::after {
 
 #results {
     display: flex;
-    justify-content: space-between;
     padding: 60px 64px;
     background-color: var(--background-0578FF);
     text-align: center;
-    flex-wrap: wrap;
+    justify-content: center;
+
 }
+
+.results-container {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
 
 #results span {
     font-size: 50px;
@@ -454,7 +497,7 @@ input[type="radio"]:checked::after {
 }
 
 #images h2 {
-    font-size: 64px;
+    font-size: clamp(32px, 5vw, 64px);
     font-weight: 700;
     margin-bottom: 24px;
 }
@@ -470,6 +513,13 @@ input[type="radio"]:checked::after {
     display: flex;
     flex-direction: column;
     gap: 32px;
+}
+
+.flex-img__item img,
+.grid-img__item img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .grid-img__item {
@@ -495,27 +545,35 @@ input[type="radio"]:checked::after {
 }
 
 #mobileApp h1 {
-    font-size: 62px;
+    font-size: clamp(32px, 5vw, 62px);
     font-weight: 700;
+    text-align: center;
+    padding: 0 20px;
 }
 
 .download {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 32px;
-    width: 863px;
+    width: 100%;
+    max-width: 863px;
+    flex-wrap: wrap;
+    padding: 0 20px;
 }
 
 #FAQ {
-    padding: 128px 177px;
+    padding: 177px 128px;
     background-color: var(--background-fff);
-
 }
 
 #FAQ h1 {
-    font-size: 64px;
+    font-size: clamp(32px, 5vw, 64px);
     font-weight: 700;
     margin-bottom: 40px;
+}
+
+.faq-content {
+    max-width: 1086px;
 }
 
 .question {
@@ -523,10 +581,23 @@ input[type="radio"]:checked::after {
     font-weight: 500;
 }
 
-.faqs-question {
+.answer {
+    padding: 16px 0;
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.question-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.faqs-question:not(:last-child) {
+    border-bottom: 1px solid var(--color-202020);
 }
 
 .faq-plus::before {
@@ -620,7 +691,10 @@ input[type="radio"]:checked::after {
         padding: 128px 32px;
         background-color: var(--background-0578FF);
         width: 100%;
-        height: calc(100vh - 116px);
+        height: 100vh;
+        z-index: 999;
+        overflow: hidden;
+
     }
 
     #menu-list li {
@@ -655,6 +729,109 @@ input[type="radio"]:checked::after {
         transition: width 0.3s;
     }
 
+    .travel-img {
+        display: none;
+    }
+
+    #travel-registration {
+        padding: 32px;
+    }
+
+    .trip-title h1 {
+        font-size: 64px;
+    }
+
+    .choose-trip {
+        max-width: 100%;
+    }
+
+    #FAQ {
+        padding: 64px 32px;
+    }
+
+    #FAQ h1 {
+        font-size: 40px;
+    }
+
+    #mobileApp h1 {
+        font-size: 40px;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    #mobileApp {
+        padding: 64px 20px;
+        gap: 32px;
+    }
+
+    #results {
+        padding: 64px 32px;
+    }
+    .results-container {
+        column-gap: 128px;
+        row-gap: 40px;
+        width: 100%;
+        max-width: 506px;
+        height: auto;
+        flex: none;
+        justify-content: center;
+    } 
+    #images {
+        padding: 128px 32px;
+    }
+    .grid-img {
+        flex-direction: column;
+    }
+
+    .grid-img__item, .flex-img__item {
+        gap: 24px;
+    }
+
+
+    .grid-img__item img, .flex-img__item img {
+        object-fit: cover;
+        max-width: 100%;
+    }
+
+    .grid-img__item {
+        flex-wrap: wrap;
+    }
+
+    .grid-img__item img:nth-child(1) {
+        margin-right: 0;
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+    }
+
+    .grid-img__item img:nth-child(2) {
+        margin-right: 0;
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+    }
+
+    .grid-img__item img {
+        margin-bottom: 0;
+    }
+
+    .download {
+        gap: 30px;
+        max-width: 462px;
+        padding: 0;
+    }
+
+    .download-box:first-child {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+
+
+
+
+
 }
 
 @media (max-width: 360px) {
@@ -670,12 +847,65 @@ input[type="radio"]:checked::after {
         padding: 64px 20px;
     }
 
+    .choose-trip {
+        font-size: 12px;
+        justify-content: space-between;
+        padding: 0 8px;
+    }
+
     #menu-list li:not(:last-child) {
         margin-bottom: 64px;
     }
 
     #menu-list a {
         font-size: 32px;
+    }
+
+    #travel-registration {
+        padding: 24px 20px 128px;
+    }
+
+    .trip-title h1 {
+        font-size: 32px;
+        white-space: normal;
+    }
+
+    .trip-title p {
+        font-size: 11px;
+    }
+
+    #images h2 {
+        font-size: 32px;
+    }
+
+    .grid-img__item img:nth-child(1) {
+        margin-right: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .grid-img__item img:nth-child(2) {
+        margin-right: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .download-box img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .results-container {
+        column-gap: 40px;
+        row-gap: 30px;
+    }
+
+    #results span {
+        font-size: 40px;
+    }
+
+    #results p {
+        font-size: 16px;
     }
 }
 

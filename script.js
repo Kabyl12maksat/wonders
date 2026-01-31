@@ -1,7 +1,11 @@
 const burgerOpen = document.getElementById('burger');
 const menuList = document.getElementById('menu-list');
+const menuListElem = document.querySelectorAll('#menu-list a');
 
 console.log(menuList)
+
+
+
 
 burgerOpen.addEventListener('click', function () {
     if (this.classList.contains('close')) {
@@ -11,6 +15,13 @@ burgerOpen.addEventListener('click', function () {
         this.classList.add('close');
         menuList.classList.add('open');
     }
+})
+
+menuListElem.forEach(function (e) {
+    e.addEventListener('click', function () {
+        burgerOpen.classList.remove('close');
+        menuList.classList.remove('open')
+    })
 })
 
 
