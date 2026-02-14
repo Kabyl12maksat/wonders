@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 64px;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 95px;
+        list-style: none;
+    }
+
+    &__logo {
+        height: 51px;
+    }
+}
