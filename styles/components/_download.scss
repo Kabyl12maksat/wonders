@@ -1,0 +1,26 @@
+.download {
+    background-color: #FFC501;
+    padding: 128px 0 116px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+
+    &__header {
+        font-size: 62px;
+        font-weight: bold;
+    }
+
+    &__images {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 125px;
+
+        img {
+            width: calc((213px * 100%) / 1440px);
+        }
+    }
+
+
+}

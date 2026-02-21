@@ -1,7 +1,13 @@
 @import 'components/header';
+@import 'components/reset';
+@import 'components/main';
+@import 'components/achievement';
+@import 'components/gallery';
+@import 'components/download';
 
 
 .wrapper {
     max-width: 1440px;
     width: 100%;
+    margin: 0 auto;
 }
