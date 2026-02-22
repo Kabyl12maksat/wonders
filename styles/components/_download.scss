@@ -9,6 +9,7 @@
     &__header {
         font-size: 62px;
         font-weight: bold;
+        text-align: center;
     }
 
     &__images {
@@ -17,10 +18,75 @@
         align-items: center;
         gap: 125px;
 
-        img {
-            width: calc((213px * 100%) / 1440px);
+        &-box {
+            img {
+                width: calc((213px * 1440px) / 1440px);
+            }
         }
     }
+}
+
+@media (max-width: 768px) {
+    .download {
+        padding: 128px 121px;
+        gap: 32px;
+
+        &__header {
+            font-size: 40px;
+            text-wrap: nowrap;
+        }
+
+        &__images {
+            gap: 30px 49px;
+            flex-wrap: wrap;
+
+            &-box {
+                width: calc((324px * 100%) / 768px);
+                display: flex;
+                justify-content: center;
+
+                &:first-of-type {
+                    width: 100%;
+
+                    img {
+                        width: calc((324px * 100%) / 768px);
+                    }
+                }
+            }
 
 
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    .download {
+        padding: 32px 46px;
+        gap: 30px;
+
+        &__header {
+            font-size: 32px;
+            text-wrap: wrap;
+        }
+
+        &__images {
+            flex-direction: column;
+
+            &-box {
+                width: calc((405px * 100%) / 768px);
+
+                &:first-of-type {
+                    width: 100%;
+
+                    img {
+                        width: calc((405px * 100%) / 768px);
+                    }
+                }
+            }
+        }
+    }
 }

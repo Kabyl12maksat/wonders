@@ -47,3 +47,15 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .faqs {
+        padding: 128px 32px 249px;
+    }
+}
+
+@media (max-width: 430px) {
+    .faqs {
+        padding: 64px 20px 161px;
+    }
+}
