@@ -73,15 +73,30 @@
                 </div>
                 <div class="main__item">
                     <p class="main__item-header">Pick your lucky day</p>
-                    <div class="main__item-input">
+                    <div class="main__item-input" id="hide">
                         <img src="images/calendar.png" alt="calendar" width="16">
-                        <span>Depart</span>
+                        <span id="depart">Depart</span>
                     </div>
                 </div>
                 <div class="main__item">
-                    <div class="main__item-input">
+                    <div class="main__item-input" id="hide">
                         <img src="images/calendar.png" alt="calendar" width="16">
-                        <span>Return</span>
+                        <span id='return'>Return</span>
+                    </div>
+                </div>
+
+
+                <div class="calendar" id="calendar">
+                    <div>
+                        <button type="button" id="prev">prev</button>
+                        <button type="button" id="next">next</button>
+                    </div>
+
+                    <div class="month-box" id="month-box"></div>
+
+                     <div>
+                        <button type="button" id="reset">reset</button>
+                        <button type="button" id="apply">apply</button>
                     </div>
                 </div>
 
@@ -271,6 +286,8 @@
             <p>All Rights Reserved (Especially the Window Seats)</p>
         </div>
     </footer>
+
+    <script src="./scripts/calendar.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,51 @@
+.days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day-title {
+    width: calc(100%/7);
+    box-sizing: border-box;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button {
+    width: 49%;
+    box-sizing: border-box;
+}
+
+.daysTitle {
+    display: flex;
+    width: 100%;
+}
+
+
+
+
+.month-box {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.month {
+    width: 49%;
+}
+
+.month-title {
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.calendar {
+    display: none;
+    border: 1px solid black;
+    width: 700px;
+}
+
+
+
